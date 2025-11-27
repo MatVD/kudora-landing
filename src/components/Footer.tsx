@@ -1,4 +1,4 @@
-import { Github, Twitter, MessageCircle } from 'lucide-react';
+import { socialLinks } from "../utils/socialUtils";
 
 export function Footer() {
   const links = {
@@ -26,12 +26,6 @@ export function Footer() {
       { name: 'Cookie Policy', href: '#' },
     ],
   };
-
-  const socialLinks = [
-    { icon: Github, href: 'https://github.com/Kudora-Labs', label: 'GitHub' },
-    { icon: Twitter, href: 'https://x.com/KudoraChain', label: 'X' },
-    { icon: MessageCircle, href: 'https://discord.gg/tRzeP4Cy', label: 'Discord' },
-  ];
 
   return (
     <footer className="bg-gray-900 border-t border-gray-800">
