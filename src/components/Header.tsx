@@ -33,7 +33,7 @@ export function Header() {
               aria-label="Kudora Labs on GitHub"
               className="flex items-center gap-0 sm:gap-2 text-sm font-medium text-gray-300 hover:text-purple-400 transition-colors"
             >
-              <Github className="w-4 h-4" />
+              <Github className="w-5 h-5" />
               <span className="hidden sm:inline">GitHub</span>
             </a>
             <a
@@ -43,7 +43,7 @@ export function Header() {
               aria-label="Kudora Whitepaper"
               className="flex items-center gap-0 sm:gap-2 text-sm font-medium text-gray-300 hover:text-purple-400 transition-colors"
             >
-              <FileText className="w-4 h-4" />
+              <FileText className="w-5 h-5" />
               <span className="hidden sm:inline">Whitepaper</span>
             </a>
             <a
@@ -53,7 +53,7 @@ export function Header() {
               aria-label="Kudora Documentation"
               className="flex items-center gap-0 sm:gap-2 text-sm font-medium text-gray-300 hover:text-purple-400 transition-colors"
             >
-              <Book className="w-4 h-4" />
+              <Book className="w-5 h-5" />
               <span className="hidden sm:inline">Documentation</span>
             </a>
           </nav>
