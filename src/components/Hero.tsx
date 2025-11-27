@@ -18,7 +18,7 @@ export function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm mb-8">
             <Network className="w-4 h-4" />
-            <span>Live Layer-1 Network</span>
+            <span>Live Layer 1 Network</span>
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
@@ -30,7 +30,7 @@ export function Hero() {
           </h1>
 
           <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Kudora is an EVM-compatible Layer-1 built in the Cosmos ecosystem, designed for builders who want real value—not hype.
+            Kudora is an EVM-compatible Layer 1 built in the Cosmos ecosystem, designed for builders who want real value, not hype.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
