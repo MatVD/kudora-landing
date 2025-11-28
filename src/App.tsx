@@ -5,6 +5,7 @@ import { WhyKudora } from "./components/WhyKudora";
 import { NetworkStatus } from "./components/NetworkStatus";
 import { EcosystemVision } from "./components/EcosystemVision";
 import { Roadmap } from "./components/Roadmap";
+import { TokenUtility } from "./components/TokenUtility";
 import { CallToAction } from "./components/CallToAction";
 import { Footer } from "./components/Footer";
 
@@ -18,6 +19,7 @@ function App() {
       <NetworkStatus />
       <EcosystemVision />
       <Roadmap />
+      <TokenUtility />
       <CallToAction />
       <Footer />
     </div>
