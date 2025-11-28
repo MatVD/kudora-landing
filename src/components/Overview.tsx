@@ -6,7 +6,7 @@ export function Overview() {
     {
       icon: Network,
       title: 'Live Network',
-      description: 'Operational Layer-1 blockchain ready for production deployments',
+      description: 'Operational Layer 1 blockchain ready for production deployments',
     },
     {
       icon: Code2,
@@ -35,7 +35,7 @@ export function Overview() {
           </h2>
           <div className="max-w-3xl mx-auto space-y-4 text-lg text-gray-300">
             <p>
-              Kudora is a live Layer-1 blockchain built on Cosmos SDK with full EVM compatibility,
+              Kudora is a live Layer 1 blockchain built on Cosmos SDK with full EVM compatibility,
               enabling developers to leverage the best of both ecosystems.
             </p>
             <p>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Zap, Wrench, Shield, Users, TrendingUp } from 'lucide-react';
+import { Zap, Wrench, Shield, Users, TrendingUp, DollarSign } from 'lucide-react';
 
 export function WhyKudora() {
   const benefits = [
@@ -28,6 +28,11 @@ export function WhyKudora() {
       title: 'Builder Focused',
       description: 'A network focused on builders, not speculation',
     },
+    {
+      icon: DollarSign,
+      title: 'Low Fees',
+      description: 'Low and predictable transaction fees for users and developers',
+    }
   ];
 
   return (

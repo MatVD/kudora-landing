@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { ArrowRight, Code2, Network } from 'lucide-react';
+import { motion } from "framer-motion";
+import { ArrowRight, Code2, Network } from "lucide-react";
 
 export function Hero() {
   return (
@@ -10,7 +10,7 @@ export function Hero() {
         <NetworkBackground />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto mt-16 md:mt-0 px-4 sm:px-6 lg:px-8 py-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -18,7 +18,7 @@ export function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm mb-8">
             <Network className="w-4 h-4" />
-            <span>Live Layer-1 Network</span>
+            <span>Live Layer 1 Network</span>
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
@@ -30,17 +30,30 @@ export function Hero() {
           </h1>
 
           <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Kudora is an EVM-compatible Layer-1 built in the Cosmos ecosystem, designed for builders who want real value—not hype.
+            Kudora is an EVM-compatible Layer 1 built in the Cosmos ecosystem,
+            designed for builders who want real value, not hype.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white rounded-lg font-semibold transition-all shadow-lg shadow-purple-600/30 hover:shadow-purple-600/50 flex items-center gap-2">
-              Explore the Network
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <a
+                href="https://cosmos.directory/kudora"
+                className="flex items-center gap-2"
+              >
+                Explore the Network
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </button>
             <button className="group px-8 py-4 bg-teal-600/10 hover:bg-teal-600/20 text-teal-300 border border-teal-500/30 rounded-lg font-semibold transition-all flex items-center gap-2">
-              <Code2 className="w-5 h-5" />
-              Start Building
+              <a
+                href="https://github.com/Kudora-Labs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Code2 className="w-5 h-5" />
+                Start Building
+              </a>
             </button>
           </div>
         </motion.div>
@@ -51,7 +64,10 @@ export function Hero() {
 
 function NetworkBackground() {
   return (
-    <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className="absolute inset-0 w-full h-full opacity-10"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <defs>
         <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
           <circle cx="20" cy="20" r="1" fill="#8B5CF6" />
@@ -69,7 +85,12 @@ function NetworkBackground() {
           strokeWidth="0.5"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 0.3 }}
-          transition={{ duration: 2, delay: i * 0.2, repeat: Infinity, repeatType: 'reverse' }}
+          transition={{
+            duration: 2,
+            delay: i * 0.2,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
         />
       ))}
     </svg>

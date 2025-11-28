@@ -1,4 +1,4 @@
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { Award, Users, Sparkles, Target } from "lucide-react";
 
@@ -32,9 +32,9 @@ export function EcosystemVision() {
 
   return (
     <section className="py-24 bg-[#0F0F12] relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute w-96 h-96 bg-teal-600/10 rounded-full blur-[100px] top-1/2 left-1/4 animate-pulse" />
-        <div className="absolute w-96 h-96 bg-purple-600/10 rounded-full blur-[100px] top-1/3 right-1/4 animate-pulse delay-700" />
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute w-96 h-96 bg-teal-600/10 rounded-full blur-3xl top-1/2 left-1/4 animate-pulse" />
+        <div className="absolute w-96 h-96 bg-purple-600/10 rounded-full blur-3xl top-1/3 right-1/4 animate-pulse delay-700" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -102,78 +102,88 @@ export function EcosystemVision() {
 
 function InteractiveVisualization() {
   const ref = useRef<HTMLDivElement>(null);
+  const rectRef = useRef<DOMRect | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const mouseX = useSpring(x, { stiffness: 150, damping: 15 });
   const mouseY = useSpring(y, { stiffness: 150, damping: 15 });
 
-  const particles = useMemo(
-    () =>
-      [...Array(150)].map((_, i) => {
-        const isShootingStar = i < 2; // Only 2 shooting stars
-        const isPlanet = !isShootingStar && Math.random() > 0.99;
-        const colorIndex = Math.floor(Math.random() * 3);
-        const colors = [
-          "from-purple-400 to-teal-400",
-          "from-blue-400 to-indigo-400",
-          "from-teal-400 to-emerald-400",
-        ];
+  const particles = useMemo(() => {
+    const count = isMobile ? 50 : 100;
+    return [...Array(count)].map((_, i) => {
+      const isShootingStar = i < 2; // Only 2 shooting stars
+      const isPlanet = !isShootingStar && Math.random() > 0.99;
+      const colorIndex = Math.floor(Math.random() * 3);
+      const colors = [
+        "from-purple-400 to-teal-400",
+        "from-blue-400 to-indigo-400",
+        "from-teal-400 to-emerald-400",
+      ];
 
-        return {
-          id: i,
-          left: Math.random() * 100,
-          top: Math.random() * 100,
-          size: isPlanet
-            ? Math.random() * 15 + 8
-            : isShootingStar
-            ? 2
-            : Math.random() * 2 + 1,
-          isPlanet,
-          isShootingStar,
-          brightness: isPlanet ? 1 : Math.random(),
-          color: isPlanet ? colors[colorIndex] : "bg-white",
-          delay: isShootingStar ? Math.random() * 3 : Math.random() * 5,
-          duration: isShootingStar
-            ? Math.random() * 1 + 1
-            : Math.random() * 20 + 20,
-          moveX: isShootingStar
-            ? (Math.random() - 0.5) * 300
-            : Math.random() * 100 - 50,
-          moveY: isShootingStar
-            ? (Math.random() - 0.5) * 300
-            : Math.random() * 100 - 50,
-        };
-      }),
-    []
-  );
+      return {
+        id: i,
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        size: isPlanet
+          ? Math.random() * 15 + 8
+          : isShootingStar
+          ? 2
+          : Math.random() * 2 + 1,
+        isPlanet,
+        isShootingStar,
+        brightness: isPlanet ? 1 : Math.random(),
+        color: isPlanet ? colors[colorIndex] : "bg-white",
+        delay: isShootingStar ? Math.random() * 3 : Math.random() * 5,
+        duration: isShootingStar
+          ? Math.random() * 1 + 1
+          : Math.random() * 20 + 20,
+        moveX: isShootingStar
+          ? (Math.random() - 0.5) * 300
+          : Math.random() * 100 - 50,
+        moveY: isShootingStar
+          ? (Math.random() - 0.5) * 300
+          : Math.random() * 100 - 50,
+      };
+    });
+  }, [isMobile]);
 
   // Generate flyby comets with random directions
-  const flybyComets = useMemo(
-    () =>
-      [...Array(5)].map((_, i) => {
-        const angle = Math.random() * Math.PI * 2;
-        const distance = 700;
-        return {
-          id: i,
-          targetX: Math.cos(angle) * distance,
-          targetY: Math.sin(angle) * distance,
-          delay: i * 4 + Math.random() * 2,
-          duration: 2 + Math.random() * 1,
-          repeatDelay: 15 + Math.random() * 10,
-        };
-      }),
-    []
-  );
+  const flybyComets = useMemo(() => {
+    const count = isMobile ? 2 : 5;
+    return [...Array(count)].map((_, i) => {
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 700;
+      return {
+        id: i,
+        targetX: Math.cos(angle) * distance,
+        targetY: Math.sin(angle) * distance,
+        delay: i * 4 + Math.random() * 2,
+        duration: 2 + Math.random() * 1,
+        repeatDelay: 15 + Math.random() * 10,
+      };
+    });
+  }, [isMobile]);
 
   // Fixed large planets with different colors
+  // Scale factor for mobile: reduce planet sizes by 50%
+  const sizeScale = isMobile ? 0.5 : 1;
+
   const fixedPlanets = useMemo(
     () => [
       {
         id: "planet-1",
         left: 15,
         top: 25,
-        size: 35,
+        size: 35 * sizeScale,
         label: "Nova",
         link: "https://kudora.org",
         gradient: "from-purple-500 to-indigo-600",
@@ -183,7 +193,7 @@ function InteractiveVisualization() {
         id: "planet-2",
         left: 75,
         top: 20,
-        size: 25,
+        size: 25 * sizeScale,
         label: "Pulse",
         link: "https://kudora.org/white-paper/",
         gradient: "from-teal-400 to-emerald-500",
@@ -193,7 +203,7 @@ function InteractiveVisualization() {
         id: "planet-3",
         left: 85,
         top: 65,
-        size: 45,
+        size: 45 * sizeScale,
         label: "Astra",
         link: "https://github.com/Kudora-Labs",
         gradient: "from-blue-400 to-cyan-500",
@@ -203,7 +213,7 @@ function InteractiveVisualization() {
         id: "planet-4",
         left: 10,
         top: 70,
-        size: 20,
+        size: 20 * sizeScale,
         label: "Lumen",
         link: "https://kudora.org/builders-manifesto/",
         gradient: "from-pink-400 to-rose-500",
@@ -213,19 +223,24 @@ function InteractiveVisualization() {
         id: "planet-5",
         left: 60,
         top: 80,
-        size: 30,
+        size: 30 * sizeScale,
         label: "Core",
-        link: "https://docs.kudora.io",
+        link: "https://cosmos.directory/kudora",
         gradient: "from-amber-400 to-orange-500",
         glowColor: "rgba(251, 191, 36, 0.6)",
       },
     ],
-    []
+    [sizeScale]
   );
 
+  function handleMouseEnter(event: React.MouseEvent<HTMLDivElement>) {
+    rectRef.current = event.currentTarget.getBoundingClientRect();
+  }
+
   function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
-    const { left, top, width, height } =
-      event.currentTarget.getBoundingClientRect();
+    if (!rectRef.current) return;
+    // Use cached rect
+    const { left, top, width, height } = rectRef.current;
     const xPct = event.clientX - left - width / 2;
     const yPct = event.clientY - top - height / 2;
     x.set(xPct);
@@ -235,6 +250,7 @@ function InteractiveVisualization() {
   function handleMouseLeave() {
     x.set(0);
     y.set(0);
+    rectRef.current = null;
   }
 
   const backgroundX = useTransform(mouseX, [-300, 300], [-40, 40]);
@@ -252,6 +268,7 @@ function InteractiveVisualization() {
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: 0.3 }}
       className="mt-16 relative perspective-1000"
+      onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ perspective: 1000 }}
@@ -260,7 +277,7 @@ function InteractiveVisualization() {
         style={{
           transformStyle: "preserve-3d",
         }}
-        className="aspect-video rounded-3xl bg-gradient-to-br from-purple-900/20 to-teal-900/20 border border-gray-700/50 overflow-hidden flex items-center justify-center transition-colors hover:border-teal-500/30"
+        className="aspect-[4/5] md:aspect-video rounded-3xl bg-gradient-to-br from-purple-900/20 to-teal-900/20 border border-gray-700/50 overflow-hidden flex items-center justify-center transition-colors hover:border-teal-500/30"
       >
         <div
           className="relative w-full h-full flex items-center justify-center"
@@ -288,14 +305,14 @@ function InteractiveVisualization() {
                   top: `${p.top}%`,
                   width: p.size,
                   height: p.size,
+                  // Simplified shadow logic
                   boxShadow: p.isPlanet
-                    ? `0 0 40px 5px rgba(171, 137, 250, 0.5)`
+                    ? `0 0 20px 2px rgba(171, 137, 250, 0.5)`
                     : p.isShootingStar
-                    ? `0 0 10px 2px rgba(255, 255, 255, 0.8)`
-                    : `0 0 ${p.size * 4}px rgba(255, 255, 255, ${
-                        p.brightness
-                      }), 0 0 ${p.size * 2}px rgba(255, 255, 255, 0.8)`,
+                    ? `0 0 5px 1px rgba(255, 255, 255, 0.8)`
+                    : "none",
                   z: p.isShootingStar ? 10 : -50,
+                  willChange: "transform, opacity",
                 }}
                 animate={{
                   scale: p.isPlanet
@@ -363,7 +380,8 @@ function InteractiveVisualization() {
                 top: "50%",
                 width: 3,
                 height: 3,
-                boxShadow: "0 0 15px 5px rgba(255, 255, 255, 0.9)",
+                boxShadow: "0 0 10px 2px rgba(255, 255, 255, 0.9)",
+                willChange: "transform, opacity",
               }}
               animate={{
                 x: [0, comet.targetX],
@@ -408,13 +426,7 @@ function InteractiveVisualization() {
                   <stop offset="50%" stopColor="rgba(45, 212, 191, 0.6)" />
                   <stop offset="100%" stopColor="rgba(251, 191, 36, 0.6)" />
                 </linearGradient>
-                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="0.3" result="coloredBlur" />
-                  <feMerge>
-                    <feMergeNode in="coloredBlur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
+                {/* Removed complex glow filter for performance */}
               </defs>
               {/* 
                 Planet centers (adjusted for position + half size in viewport units):
@@ -432,7 +444,6 @@ function InteractiveVisualization() {
                 strokeWidth="0.08"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                filter="url(#glow)"
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={{ pathLength: 1, opacity: 0.45 }}
                 transition={{
@@ -449,7 +460,6 @@ function InteractiveVisualization() {
                 stroke="url(#threadGradient)"
                 strokeWidth="0.06"
                 strokeLinecap="round"
-                filter="url(#glow)"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.25 }}
                 transition={{ duration: 2, delay: 1 }}
@@ -462,7 +472,6 @@ function InteractiveVisualization() {
                 stroke="url(#threadGradient)"
                 strokeWidth="0.06"
                 strokeLinecap="round"
-                filter="url(#glow)"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.25 }}
                 transition={{ duration: 2, delay: 1.5 }}
@@ -475,7 +484,6 @@ function InteractiveVisualization() {
                 stroke="url(#threadGradient)"
                 strokeWidth="0.06"
                 strokeLinecap="round"
-                filter="url(#glow)"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.25 }}
                 transition={{ duration: 2, delay: 2 }}

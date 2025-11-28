@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { ArrowRight, Users } from 'lucide-react';
+import { motion } from "framer-motion";
+import { ArrowRight, Users } from "lucide-react";
 
 export function CallToAction() {
   return (
@@ -32,19 +32,48 @@ export function CallToAction() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white rounded-lg font-semibold transition-all shadow-lg shadow-purple-600/30 hover:shadow-purple-600/50 flex items-center gap-2 text-lg">
-              Start Building
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <a
+                href="https://github.com/Kudora-Labs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                Start Building
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </button>
             <button className="group px-8 py-4 bg-teal-600/10 hover:bg-teal-600/20 text-teal-300 border border-teal-500/30 rounded-lg font-semibold transition-all flex items-center gap-2 text-lg">
-              <Users className="w-5 h-5" />
-              Join the Community
+              <a
+                href="https://discord.gg/tRzeP4Cy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Users className="w-5 h-5" />
+                Join Discord
+              </a>
             </button>
           </div>
 
           <div className="mt-16 flex flex-wrap justify-center gap-8 text-sm text-gray-400">
-            <a href="#" className="hover:text-purple-400 transition-colors">Live Network Status</a>
-            <a href="#" className="hover:text-purple-400 transition-colors">Documentation</a>
-            <a href="#" className="hover:text-purple-400 transition-colors">Developer Resources</a>
+            <a
+              href="https://cosmos.directory/kudora"
+              className="hover:text-purple-400 transition-colors"
+            >
+              Live Network Status
+            </a>
+            <a
+              href="https://github.com/Kudora-Labs"
+              className="hover:text-purple-400 transition-colors"
+            >
+              Documentation
+            </a>
+            <a
+              href="https://github.com/Kudora-Labs"
+              className="hover:text-purple-400 transition-colors"
+            >
+              Developer Resources
+            </a>
           </div>
         </motion.div>
       </div>

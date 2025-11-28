@@ -1,17 +1,17 @@
 import { socialLinks } from "../utils/socialUtils";
+import logo from "../assets/logo_dark_v1.svg";
 
 export function Footer() {
   const links = {
     resources: [
       { name: 'Documentation', href: 'https://github.com/Kudora-Labs' },
-      { name: 'Block Explorer', href: '#' },
-      { name: 'GitHub', href: '#' },
-      { name: 'Cosmos Directory', href: '#' },
+      { name: 'Block Explorer', href: 'https://blockscout.kudora.org/' },
+      { name: 'GitHub', href: 'https://github.com/Kudora-Labs' },
+      { name: 'Cosmos Directory', href: 'https://cosmos.directory/kudora' },
     ],
     community: [
       { name: 'Discord', href: 'https://discord.gg/tRzeP4Cy' },
       { name: 'Twitter', href: 'https://x.com/KudoraChain' },
-      { name: 'Telegram', href: '#' },
       { name: 'Forum', href: 'https://github.com/Kudora-Labs' },
     ],
     developers: [
@@ -100,7 +100,7 @@ export function Footer() {
           <div className="flex items-center gap-3">
 
             <img
-              src="/logo_dark_v1.svg"
+              src={logo}
               alt="Kudora Logo"
               className="w-12 h-12 border-white border rounded-full"
             />
