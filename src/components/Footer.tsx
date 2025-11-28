@@ -5,14 +5,13 @@ export function Footer() {
   const links = {
     resources: [
       { name: 'Documentation', href: 'https://github.com/Kudora-Labs' },
-      { name: 'Block Explorer', href: '#' },
+      { name: 'Block Explorer', href: 'https://blockscout.kudora.org/' },
       { name: 'GitHub', href: 'https://github.com/Kudora-Labs' },
       { name: 'Cosmos Directory', href: 'https://cosmos.directory/kudora' },
     ],
     community: [
       { name: 'Discord', href: 'https://discord.gg/tRzeP4Cy' },
       { name: 'Twitter', href: 'https://x.com/KudoraChain' },
-      { name: 'Telegram', href: '#' },
       { name: 'Forum', href: 'https://github.com/Kudora-Labs' },
     ],
     developers: [
