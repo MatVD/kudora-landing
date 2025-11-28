@@ -103,15 +103,16 @@ export function OnboardingProject() {
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-4 sm:mb-6">
             <Play className="w-4 h-4 text-purple-400 mr-2" />
             <span className="text-purple-400 text-sm font-medium">
-              Video Tutorials
+              Web3 Project Management
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
             Onboarding Project
           </h2>
           <p className="max-w-3xl mx-auto text-base sm:text-lg text-gray-300">
-            Get started with Kudora through our step-by-step video guides. Learn
-            how to interact with the network and explore its features.
+            Manage your projects efficiently using Kudora's
+            decentralized platform. Create tasks, collaborate with builders, and
+            track progress seamlessly.
           </p>
         </motion.div>
 
