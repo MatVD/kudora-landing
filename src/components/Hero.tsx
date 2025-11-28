@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Code2, Network } from "lucide-react";
+import { ParticlesBackground } from './ParticlesBackground';
 
 export function Hero() {
   return (
@@ -7,7 +8,7 @@ export function Hero() {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] -top-48 -left-48 animate-pulse" />
         <div className="absolute w-[600px] h-[600px] bg-teal-600/20 rounded-full blur-[120px] -bottom-48 -right-48 animate-pulse delay-1000" />
-        <NetworkBackground />
+        <ParticlesBackground />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto mt-16 md:mt-0 px-4 sm:px-6 lg:px-8 py-20 text-center">
@@ -59,40 +60,5 @@ export function Hero() {
         </motion.div>
       </div>
     </section>
-  );
-}
-
-function NetworkBackground() {
-  return (
-    <svg
-      className="absolute inset-0 w-full h-full opacity-10"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <defs>
-        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-          <circle cx="20" cy="20" r="1" fill="#8B5CF6" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#grid)" />
-      {[...Array(8)].map((_, i) => (
-        <motion.line
-          key={i}
-          x1={`${Math.random() * 100}%`}
-          y1={`${Math.random() * 100}%`}
-          x2={`${Math.random() * 100}%`}
-          y2={`${Math.random() * 100}%`}
-          stroke="#8B5CF6"
-          strokeWidth="0.5"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 0.3 }}
-          transition={{
-            duration: 2,
-            delay: i * 0.2,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-        />
-      ))}
-    </svg>
   );
 }

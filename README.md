@@ -7,6 +7,7 @@ Official landing page for Kudora - A decentralized network infrastructure projec
 - **Modern React Stack**: Built with React 18, TypeScript, and Vite
 - **Responsive Design**: Fully responsive layout using Tailwind CSS
 - **Smooth Animations**: Powered by Framer Motion for engaging user experiences
+- **Interactive Particles**: Dynamic particle background with TSParticles for visual appeal
 - **Backend Integration**: Connected to Supabase for data management
 - **Icon Library**: Lucide React for beautiful, consistent icons
 
@@ -58,6 +59,8 @@ Build the project for production:
 npm run build
 ```
 
+The build output will be in the `dist/` directory.
+
 ### Preview Production Build
 
 Preview the production build locally:
@@ -87,8 +90,11 @@ npm run lint
 ```
 kudora-landing/
 ├── src/
-│   ├── components/        # React components
+│   ├── assets/              # Static assets (images, logos)
+│   │   └── logo_dark_v1.svg
+│   ├── components/          # React components
 │   │   ├── Hero.tsx
+│   │   ├── ParticlesBackground.tsx
 │   │   ├── Overview.tsx
 │   │   ├── WhyKudora.tsx
 │   │   ├── NetworkStatus.tsx
@@ -96,18 +102,56 @@ kudora-landing/
 │   │   ├── Roadmap.tsx
 │   │   ├── CallToAction.tsx
 │   │   └── Footer.tsx
-│   ├── utils/            # Utility functions
-│   ├── assets/           # Static assets
-│   ├── App.tsx           # Main App component
-│   ├── main.tsx          # Application entry point
-│   └── index.css         # Global styles
-├── public/               # Public assets
-├── index.html            # HTML template
-├── vite.config.ts        # Vite configuration
-├── tailwind.config.js    # Tailwind CSS configuration
-├── tsconfig.json         # TypeScript configuration
-└── package.json          # Project dependencies
+│   ├── utils/               # Utility functions
+│   │   └── socialUtils.ts
+│   ├── App.tsx              # Main App component
+│   ├── main.tsx             # Application entry point
+│   └── index.css            # Global styles
+├── public/                  # Public assets
+├── index.html               # HTML template
+├── vite.config.ts           # Vite configuration
+├── tailwind.config.js       # Tailwind CSS configuration
+├── tsconfig.json            # TypeScript configuration
+└── package.json             # Project dependencies
 ```
+
+## 🎨 Components Overview
+
+The landing page is composed of the following sections (in order):
+
+1. **Hero** - Main hero section with headline, CTA, and animated particle background
+2. **Overview** - Introduction to Kudora Chain
+3. **WhyKudora** - Key benefits and features
+4. **NetworkStatus** - Real-time network statistics
+5. **EcosystemVision** - Vision and ecosystem overview
+6. **Roadmap** - Development roadmap
+7. **CallToAction** - Conversion section
+8. **Footer** - Links and social media
+
+### ParticlesBackground Component
+
+**`src/components/ParticlesBackground.tsx`**
+
+An interactive particle effect system used in the Hero section, built with TSParticles v3.0:
+
+**Features:**
+- ✨ **Glow Effect** - Particles with pronounced shadow/halo (15px blur)
+- 🎨 **Theme Colors** - Purple (#8B5CF6) and Teal (#14B8A6) color palette
+- 💫 **50 Optimized Particles** - Variable sizes (2-8px) with smooth animations
+- 🔗 **Connection Lines** - Subtle purple lines (opacity: 0.25) connecting nearby particles
+- 🎭 **Smooth Movement** - Slow, professional animation (speed: 1.2)
+- 🖱️ **Interactive**:
+  - Hover: Particles connect to cursor (grab mode)
+  - Click: Adds 3 new particles (push mode)
+- ⚡ **Performance Optimized** - 60 FPS limit, uses `@tsparticles/slim` for smaller bundle
+- 📱 **Responsive** - Automatic density adjustment based on screen size
+- 🎯 **Retina Ready** - High-DPI display support
+
+**Technical Implementation:**
+- Uses React hooks (`useEffect`, `useState`, `useCallback`)
+- Initializes engine with `initParticlesEngine` and `loadSlim`
+- Fully typed with TypeScript strict mode
+- Zero-impact on layout (position: absolute, z-index: 0)
 
 ## 🛠️ Tech Stack
 
@@ -116,6 +160,7 @@ kudora-landing/
 - **Language**: [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 - **Animations**: [Framer Motion](https://www.framer.com/motion/) - Production-ready motion library
+- **Particles**: [TSParticles](https://particles.js.org/) - Lightweight particles animation library
 - **Icons**: [Lucide React](https://lucide.dev/) - Beautiful & consistent icon toolkit
 - **Backend**: [Supabase](https://supabase.com/) - Open source Firebase alternative
 
@@ -138,6 +183,11 @@ This project is private and proprietary to Kudora Labs.
 Kudora Labs - [@KudoraLabs](https://github.com/Kudora-Labs)
 
 Project Link: [https://github.com/Kudora-Labs/kudora-landing](https://github.com/Kudora-Labs/kudora-landing)
+
+For questions or support, reach out through:
+- GitHub: https://github.com/Kudora-Labs
+- Twitter: https://x.com/KudoraChain
+- Discord: https://discord.gg/tRzeP4Cy
 
 ---
 
