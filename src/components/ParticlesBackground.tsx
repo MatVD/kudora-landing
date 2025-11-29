@@ -1,7 +1,6 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import type { Container } from "@tsparticles/engine";
 
 export function ParticlesBackground() {
   const [init, setInit] = useState(false);
@@ -14,14 +13,6 @@ export function ParticlesBackground() {
     });
   }, []);
 
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {
-      // Particles loaded successfully
-      console.log("Particles loaded", container);
-    },
-    []
-  );
-
   if (!init) {
     return null;
   }
@@ -29,7 +20,6 @@ export function ParticlesBackground() {
   return (
     <Particles
       id="tsparticles"
-      particlesLoaded={particlesLoaded}
       options={{
         background: {
           color: { value: "transparent" }

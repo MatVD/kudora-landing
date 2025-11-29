@@ -4,11 +4,11 @@ Official landing page for Kudora - A decentralized network infrastructure projec
 
 ## 🚀 Features
 
-- **Modern React Stack**: Built with React 18, TypeScript, and Vite
+- **Modern React Stack**: Built with React 18, TypeScript, and Vite 7
 - **Responsive Design**: Fully responsive layout using Tailwind CSS
 - **Smooth Animations**: Powered by Framer Motion for engaging user experiences
 - **Interactive Particles**: Dynamic particle background with TSParticles for visual appeal
-- **Backend Integration**: Connected to Supabase for data management
+- **SEO Optimized**: Comprehensive meta tags for search engines and social media sharing
 - **Icon Library**: Lucide React for beautiful, consistent icons
 
 ## 📋 Prerequisites
@@ -31,12 +31,6 @@ cd kudora-landing
 
 ```bash
 npm install
-```
-
-3. Set up environment variables (if needed):
-
-```bash
-cp .env.example .env
 ```
 
 ## 🏃 Running the Project
@@ -155,14 +149,13 @@ An interactive particle effect system used in the Hero section, built with TSPar
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [React](https://react.dev/) - A JavaScript library for building user interfaces
-- **Build Tool**: [Vite](https://vitejs.dev/) - Next generation frontend tooling
-- **Language**: [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
-- **Animations**: [Framer Motion](https://www.framer.com/motion/) - Production-ready motion library
-- **Particles**: [TSParticles](https://particles.js.org/) - Lightweight particles animation library
+- **Framework**: [React](https://react.dev/) v18 - A JavaScript library for building user interfaces
+- **Build Tool**: [Vite](https://vitejs.dev/) v7 - Next generation frontend tooling
+- **Language**: [TypeScript](https://www.typescriptlang.org/) v5 - JavaScript with syntax for types
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) v3 - A utility-first CSS framework
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) v12 - Production-ready motion library
+- **Particles**: [TSParticles](https://particles.js.org/) v3 - Lightweight particles animation library
 - **Icons**: [Lucide React](https://lucide.dev/) - Beautiful & consistent icon toolkit
-- **Backend**: [Supabase](https://supabase.com/) - Open source Firebase alternative
 
 ## 🤝 Contributing
 
