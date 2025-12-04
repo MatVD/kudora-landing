@@ -14,15 +14,17 @@ function App() {
   return (
     <div className="min-h-screen bg-[#0F0F12]">
       <Header />
-      <Hero />
-      <EcosystemVision />
-      <Roadmap />
-      <TokenUtility />
-      <Overview />
-      <OnboardingProject />
-      <WhyKudora />
-      <NetworkStatus />
-      <CallToAction />
+      <main>
+        <Hero />
+        <EcosystemVision />
+        <Roadmap />
+        <TokenUtility />
+        <Overview />
+        <OnboardingProject />
+        <WhyKudora />
+        <NetworkStatus />
+        <CallToAction />
+      </main>
       <Footer />
     </div>
   );

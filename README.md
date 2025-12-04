@@ -63,6 +63,41 @@ Preview the production build locally:
 npm run preview
 ```
 
+## 🌐 Deployment
+
+### Quick Deploy
+
+For a complete deployment guide, see:
+
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Detailed deployment documentation
+
+### Automated Deployment
+
+```bash
+# Configure your server details in deploy.sh
+./deploy.sh user@your-server-ip
+```
+
+### Manual Deployment
+
+```bash
+# 1. Build the project
+npm run build
+
+# 2. Transfer files to server
+scp -r dist/* user@server-ip:/tmp/kudora-landing/
+
+# 3. On the server
+sudo mv /tmp/kudora-landing/* /var/www/kudora-landing/
+sudo chown -R www-data:www-data /var/www/kudora-landing
+```
+
+The project includes:
+
+- `nginx.conf` - Nginx server configuration
+- `deploy.sh` - Automated deployment script
+- Complete SSL/HTTPS setup instructions
+
 ### Type Checking
 
 Run TypeScript type checking:
@@ -129,6 +164,7 @@ The landing page is composed of the following sections (in order):
 An interactive particle effect system used in the Hero section, built with TSParticles v3.0:
 
 **Features:**
+
 - ✨ **Glow Effect** - Particles with pronounced shadow/halo (15px blur)
 - 🎨 **Theme Colors** - Purple (#8B5CF6) and Teal (#14B8A6) color palette
 - 💫 **50 Optimized Particles** - Variable sizes (2-8px) with smooth animations
@@ -142,6 +178,7 @@ An interactive particle effect system used in the Hero section, built with TSPar
 - 🎯 **Retina Ready** - High-DPI display support
 
 **Technical Implementation:**
+
 - Uses React hooks (`useEffect`, `useState`, `useCallback`)
 - Initializes engine with `initParticlesEngine` and `loadSlim`
 - Fully typed with TypeScript strict mode
@@ -178,6 +215,7 @@ Kudora Labs - [@KudoraLabs](https://github.com/Kudora-Labs)
 Project Link: [https://github.com/Kudora-Labs/kudora-landing](https://github.com/Kudora-Labs/kudora-landing)
 
 For questions or support, reach out through:
+
 - GitHub: https://github.com/Kudora-Labs
 - Twitter: https://x.com/KudoraChain
 - Discord: https://discord.gg/tRzeP4Cy

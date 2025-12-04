@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Code2, Network } from "lucide-react";
-import { ParticlesBackground } from './ParticlesBackground';
+import { ParticlesBackground } from "./ParticlesBackground";
 
 export function Hero() {
   return (
@@ -18,7 +18,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm mb-8">
-            <Network className="w-4 h-4" />
+            <Network className="w-4 h-4" aria-hidden="true" />
             <span>Live Layer 1 Network</span>
           </div>
 
@@ -36,26 +36,29 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white rounded-lg font-semibold transition-all shadow-lg shadow-purple-600/30 hover:shadow-purple-600/50 flex items-center gap-2">
-              <a
-                href="https://cosmos.directory/kudora"
-                className="flex items-center gap-2"
-              >
-                Explore the Network
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </button>
-            <button className="group px-8 py-4 bg-teal-600/10 hover:bg-teal-600/20 text-teal-300 border border-teal-500/30 rounded-lg font-semibold transition-all flex items-center gap-2">
-              <a
-                href="https://github.com/Kudora-Labs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <Code2 className="w-5 h-5" />
-                Start Building
-              </a>
-            </button>
+            <a
+              href="https://cosmos.directory/kudora"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white rounded-lg font-semibold transition-all shadow-lg shadow-purple-600/30 hover:shadow-purple-600/50 flex items-center gap-2"
+              aria-label="Explore Kudora Network on Cosmos Directory"
+            >
+              Explore the Network
+              <ArrowRight
+                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                aria-hidden="true"
+              />
+            </a>
+            <a
+              href="https://github.com/Kudora-Labs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group px-8 py-4 bg-teal-600/10 hover:bg-teal-600/20 text-teal-300 border border-teal-500/30 rounded-lg font-semibold transition-all flex items-center gap-2"
+              aria-label="Start building on Kudora - View GitHub repositories"
+            >
+              <Code2 className="w-5 h-5" aria-hidden="true" />
+              Start Building
+            </a>
           </div>
         </motion.div>
       </div>

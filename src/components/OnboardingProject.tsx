@@ -29,7 +29,13 @@ function GifCard({
     <>
       <div className="group rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/10 overflow-hidden">
         <div className="relative aspect-[9/16] sm:aspect-video max-h-[70vh] mx-auto bg-black">
-          <img src={src} alt={title} className="w-full h-full object-contain" />
+          <img
+            src={src}
+            alt={title}
+            className="w-full h-full object-contain"
+            loading="lazy"
+            decoding="async"
+          />
           {/* Bouton agrandir visible uniquement sur mobile */}
           <button
             onClick={openFullscreen}
@@ -63,6 +69,8 @@ function GifCard({
               src={src}
               alt={title}
               className="max-w-full max-h-full w-auto h-auto object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm">

@@ -4,26 +4,26 @@ import logo from "../assets/logo_dark_v1.svg";
 export function Footer() {
   const links = {
     resources: [
-      { name: 'Documentation', href: 'https://github.com/Kudora-Labs' },
-      { name: 'Block Explorer', href: 'https://blockscout.kudora.org/' },
-      { name: 'GitHub', href: 'https://github.com/Kudora-Labs' },
-      { name: 'Cosmos Directory', href: 'https://cosmos.directory/kudora' },
+      { name: "Documentation", href: "https://github.com/Kudora-Labs" },
+      { name: "Block Explorer", href: "https://blockscout.kudora.org/" },
+      { name: "GitHub", href: "https://github.com/Kudora-Labs" },
+      { name: "Cosmos Directory", href: "https://cosmos.directory/kudora" },
     ],
     community: [
-      { name: 'Discord', href: 'https://discord.gg/tRzeP4Cy' },
-      { name: 'Twitter', href: 'https://x.com/KudoraChain' },
-      { name: 'Forum', href: 'https://github.com/Kudora-Labs' },
+      { name: "Discord", href: "https://discord.gg/tRzeP4Cy" },
+      { name: "Twitter", href: "https://x.com/KudoraChain" },
+      { name: "Forum", href: "https://github.com/Kudora-Labs" },
     ],
     developers: [
-      { name: 'API Reference', href: 'https://github.com/Kudora-Labs' },
-      { name: 'Developer Tools', href: 'https://github.com/Kudora-Labs' },
-      { name: 'Tutorials', href: 'https://github.com/Kudora-Labs' },
-      { name: 'Grant Programs', href: '#' },
+      { name: "API Reference", href: "https://github.com/Kudora-Labs" },
+      { name: "Developer Tools", href: "https://github.com/Kudora-Labs" },
+      { name: "Tutorials", href: "https://github.com/Kudora-Labs" },
+      { name: "Grant Programs", href: "#" },
     ],
     legal: [
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Cookie Policy', href: '#' },
+      { name: "Terms of Service", href: "#" },
+      { name: "Privacy Policy", href: "#" },
+      { name: "Cookie Policy", href: "#" },
     ],
   };
 
@@ -98,11 +98,13 @@ export function Footer() {
 
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-3">
-
             <img
               src={logo}
               alt="Kudora Logo"
               className="w-12 h-12 border-white border rounded-full"
+              width="48"
+              height="48"
+              loading="lazy"
             />
             <div>
               <div className="text-white font-bold">Kudora</div>
