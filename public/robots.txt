@@ -1,0 +1,15 @@
+# Kudora Chain - Robots.txt
+# https://kudora.org/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://kudora.org/sitemap.xml
+
+# Crawl-delay (optional, adjust as needed)
+# Crawl-delay: 1
+
+# Block specific bots if needed (example)
+# User-agent: BadBot
+# Disallow: /

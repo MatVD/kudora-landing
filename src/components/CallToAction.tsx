@@ -31,28 +31,29 @@ export function CallToAction() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white rounded-lg font-semibold transition-all shadow-lg shadow-purple-600/30 hover:shadow-purple-600/50 flex items-center gap-2 text-lg">
-              <a
-                href="https://github.com/Kudora-Labs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                Start Building
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </button>
-            <button className="group px-8 py-4 bg-teal-600/10 hover:bg-teal-600/20 text-teal-300 border border-teal-500/30 rounded-lg font-semibold transition-all flex items-center gap-2 text-lg">
-              <a
-                href="https://discord.gg/tRzeP4Cy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <Users className="w-5 h-5" />
-                Join Discord
-              </a>
-            </button>
+            <a
+              href="https://github.com/Kudora-Labs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white rounded-lg font-semibold transition-all shadow-lg shadow-purple-600/30 hover:shadow-purple-600/50 flex items-center gap-2 text-lg"
+              aria-label="Start building on Kudora - Access GitHub resources"
+            >
+              Start Building
+              <ArrowRight
+                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                aria-hidden="true"
+              />
+            </a>
+            <a
+              href="https://discord.gg/tRzeP4Cy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group px-8 py-4 bg-teal-600/10 hover:bg-teal-600/20 text-teal-300 border border-teal-500/30 rounded-lg font-semibold transition-all flex items-center gap-2 text-lg"
+              aria-label="Join Kudora community on Discord"
+            >
+              <Users className="w-5 h-5" aria-hidden="true" />
+              Join Discord
+            </a>
           </div>
 
           <div className="mt-16 flex flex-wrap justify-center gap-8 text-sm text-gray-400">

@@ -1,33 +1,136 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./logo_dark_v1.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- SEO Meta Tags -->
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="author" content="Kudora Labs" />
+    <meta name="theme-color" content="#0F0F12" />
+
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://github.com" crossorigin />
+    <link rel="preconnect" href="https://cosmos.directory" crossorigin />
+    <link rel="dns-prefetch" href="https://blockscout.kudora.org" />
+
     <!-- Primary Meta Tags -->
     <title>Kudora Chain - The Future of Decentralized Applications</title>
-    <meta name="title" content="Kudora Chain - The Future of Decentralized Applications" />
-    <meta name="description" content="Kudora Chain is a high-performance blockchain platform for building decentralized applications. Experience fast, secure, and scalable Web3 infrastructure with KUD token utility." />
-    <meta name="keywords" content="Kudora, blockchain, Web3, decentralized, cryptocurrency, KUD token, dApps, Cosmos, DeFi" />
+    <meta
+      name="title"
+      content="Kudora Chain - The Future of Decentralized Applications"
+    />
+    <meta
+      name="description"
+      content="Kudora Chain is a high-performance blockchain platform for building decentralized applications. Experience fast, secure, and scalable Web3 infrastructure with KUD token utility."
+    />
+    <meta
+      name="keywords"
+      content="Kudora, blockchain, Web3, decentralized, cryptocurrency, KUD token, dApps, Cosmos, DeFi"
+    />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://kudora.network/" />
-    <meta property="og:title" content="Kudora Chain - The Future of Decentralized Applications" />
-    <meta property="og:description" content="Kudora Chain is a high-performance blockchain platform for building decentralized applications. Experience fast, secure, and scalable Web3 infrastructure with KUD token utility." />
-    <meta property="og:image" content="https://kudora.network/og-image.png" />
+    <meta property="og:url" content="https://kudora.org/" />
+    <meta
+      property="og:title"
+      content="Kudora Chain - The Future of Decentralized Applications"
+    />
+    <meta
+      property="og:description"
+      content="Kudora Chain is a high-performance blockchain platform for building decentralized applications. Experience fast, secure, and scalable Web3 infrastructure with KUD token utility."
+    />
+    <meta property="og:image" content="https://kudora.org/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Kudora Chain - Build with Purpose, Deploy on Kudora"
+    />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://kudora.network/" />
-    <meta property="twitter:title" content="Kudora Chain - The Future of Decentralized Applications" />
-    <meta property="twitter:description" content="Kudora Chain is a high-performance blockchain platform for building decentralized applications. Experience fast, secure, and scalable Web3 infrastructure with KUD token utility." />
-    <meta property="twitter:image" content="https://kudora.network/twitter-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://kudora.org/" />
+    <meta name="twitter:site" content="@KudoraChain" />
+    <meta name="twitter:creator" content="@KudoraChain" />
+    <meta
+      name="twitter:title"
+      content="Kudora Chain - EVM-Compatible Layer 1 Blockchain on Cosmos"
+    />
+    <meta
+      name="twitter:description"
+      content="Kudora is a live EVM-compatible Layer 1 blockchain built on Cosmos SDK with IBC interoperability. Deploy Solidity smart contracts with KUD token utility."
+    />
+    <meta name="twitter:image" content="https://kudora.org/twitter-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Kudora Chain - Build with Purpose, Deploy on Kudora"
+    />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://kudora.network/" />
-</head>
+    <link rel="canonical" href="https://kudora.org/" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Kudora Chain",
+        "legalName": "Kudora Labs",
+        "url": "https://kudora.org",
+        "logo": "https://kudora.org/logo_dark_v1.svg",
+        "foundingDate": "2024",
+        "description": "Kudora is an EVM-compatible Layer 1 blockchain built on Cosmos SDK with IBC interoperability, designed for builders who want real value, not hype.",
+        "sameAs": [
+          "https://x.com/KudoraChain",
+          "https://github.com/Kudora-Labs",
+          "https://discord.gg/tRzeP4Cy",
+          "https://cosmos.directory/kudora"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Technical Support",
+          "url": "https://discord.gg/tRzeP4Cy"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Kudora Chain",
+        "url": "https://kudora.org",
+        "description": "EVM-compatible Layer 1 blockchain built on Cosmos SDK",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://blockscout.kudora.org/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Kudora Chain",
+        "applicationCategory": "Blockchain Platform",
+        "operatingSystem": "Cross-platform",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "EVM-compatible Layer 1 blockchain with Cosmos SDK and IBC support"
+      }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
